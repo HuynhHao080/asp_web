@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\source\\repos\\BaiTapVeNha02\\BaiTapVeNha02.csproj": {}
+    "C:\\Users\\Admin\\Documents\\GitHub\\asp_web\\BaiTapVeNha02\\BaiTapVeNha02.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\source\\repos\\BaiTapVeNha02\\BaiTapVeNha02.csproj": {
+    "C:\\Users\\Admin\\Documents\\GitHub\\asp_web\\BaiTapVeNha02\\BaiTapVeNha02.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\BaiTapVeNha02\\BaiTapVeNha02.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\asp_web\\BaiTapVeNha02\\BaiTapVeNha02.csproj",
         "projectName": "BaiTapVeNha02",
-        "projectPath": "C:\\Users\\Admin\\source\\repos\\BaiTapVeNha02\\BaiTapVeNha02.csproj",
+        "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\asp_web\\BaiTapVeNha02\\BaiTapVeNha02.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\source\\repos\\BaiTapVeNha02\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\asp_web\\BaiTapVeNha02\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,6 +46,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
             "Microsoft.AspNetCore.Razor.Runtime": {
               "target": "Package",
               "version": "[2.2.0, )"
