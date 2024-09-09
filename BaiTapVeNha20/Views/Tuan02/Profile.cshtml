@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Hồ sơ cá nhân";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .profile-header {
+            padding: 20px;
+            text-align: center;
+        }
+
+            .profile-header img {
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+            }
+
+        .profile-content {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <img src="~/images/OIP.jpg" alt="Profile Image">
+            <h2>Họ và tên: @ViewBag.HoTen</h2>
+            <p>MSSV: @ViewBag.MSSV</p>
+            <p>Năm: @ViewBag.Nam</p>
+        </div>
+        <div class="profile-content">
+            <h3>Thông tin chi tiết</h3>
+            <p>Đây là thông tin chi tiết về người dùng. Bạn có thể thêm nhiều thông tin hơn ở đây.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

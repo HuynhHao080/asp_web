@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Kết quả tính toán";
+}
+
+<h2>Kết quả phép tính</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.ThongBao))
+{
+    <p>@ViewBag.ThongBao</p>
+}
+else
+{
+    <p>Chưa có kết quả.</p>
+}
