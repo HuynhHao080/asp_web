@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1N5ksc6+l1sOm8irLgPUsC8U6wxEjG09D7rP7mAFiC8=",
+  "Hash": "n3v6jnWuGSNIBQOMrgsdHdva9WAqjBhJnmfaA8i3//c=",
   "Source": "BaiTapKiemTra01",
   "BasePath": "_content/BaiTapKiemTra01",
   "Mode": "Default",
@@ -1003,6 +1003,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\anhchup\\FormDangKy.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Documents\\GitHub\\asp_web\\BaiTapKiemTra01\\wwwroot\\img\\anhchup\\FormSanPham.jpg",
+      "SourceId": "BaiTapKiemTra01",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Documents\\GitHub\\asp_web\\BaiTapKiemTra01\\wwwroot\\",
+      "BasePath": "_content/BaiTapKiemTra01",
+      "RelativePath": "img/anhchup/FormSanPham.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\anhchup\\FormSanPham.jpg"
     },
     {
       "Identity": "C:\\Users\\Admin\\Documents\\GitHub\\asp_web\\BaiTapKiemTra01\\wwwroot\\img\\anhchup\\Head.jpg",

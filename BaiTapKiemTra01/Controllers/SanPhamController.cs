@@ -7,37 +7,20 @@ namespace BaiTapKiemTra01.Controllers
 {
     public class SanPhamController : Controller
     {
-        [HttpGet]
-        public IActionResult CreateSanPham()
+        public IActionResult Index()
         {
             return View();
         }
-
-        [HttpPost]
-        public async Task<IActionResult> CreateSanPham(SanPhamViewModel model)
+        public IActionResult BaiTap2()
         {
-            if (ModelState.IsValid)
+            var sanpham = new SanPhamViewModel()
             {
-                if (model.AnhMoTaFile != null && model.AnhMoTaFile.Length > 0)
-                {
-                    var fileName = Path.GetFileName(model.AnhMoTaFile.FileName);
-                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
+                TenSanPham = "Ảnh bàn ghế",
+                GiaBan = 24,
+                AnhMoTa = "/images/img-grid-2.jpg"
+            };
 
-                    using (var stream = new FileStream(filePath, FileMode.Create))
-                    {
-                        await model.AnhMoTaFile.CopyToAsync(stream);
-                    }
-
-                    // Cập nhật đường dẫn ảnh vào ViewModel
-                    model.AnhMoTa = "/images/" + fileName;
-                }
-
-                // Chuyển dữ liệu đến View 'BaiTap2'
-                return View("BaiTap2", model);
-            }
-
-            // Nếu model không hợp lệ, quay lại View CreateSanPham
-            return View(model);
+            return View(sanpham);
         }
     }
 }

@@ -1,20 +1,16 @@
-﻿@model SanPhamViewModel
-
+﻿﻿
 @{
-    ViewData["Title"] = "Thông tin Sản phẩm";
+    ViewData["Title"] = "BaiTap2";
 }
 
-<h2>Thông tin Sản phẩm</h2>
+<h1>Bài Tập 2</h1>
+@model BaiTapKiemTra01.Models.SanPhamViewModel
 
-<div>
-    <h3>@Model.TenSanPham</h3>
-    <p><strong>Giá bán:</strong> @Model.GiaBan.ToString("C")</p>
-    @if (!string.IsNullOrEmpty(Model.AnhMoTa))
-    {
-        <img src="@Model.AnhMoTa" alt="Ảnh mô tả" style="max-width: 300px;" />
-    }
-    else
-    {
-        <p>Không có ảnh mô tả</p>
-    }
+<div class="container">
+    <h2>Thông tin sản phẩm</h2>
+    <div class="product-details">
+        <p>Tên SP: @Model.TenSanPham</p>
+        <p>Giá bán: @Model.GiaBan.ToString("C")</p>
+        <img src="@Model.AnhMoTa" alt="Ảnh mô tả của @Model.TenSanPham" style="width:200px; height:200px;" />
+    </div>
 </div>
