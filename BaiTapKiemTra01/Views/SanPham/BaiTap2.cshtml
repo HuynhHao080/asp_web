@@ -1,0 +1,20 @@
+﻿@model SanPhamViewModel
+
+@{
+    ViewData["Title"] = "Thông tin Sản phẩm";
+}
+
+<h2>Thông tin Sản phẩm</h2>
+
+<div>
+    <h3>@Model.TenSanPham</h3>
+    <p><strong>Giá bán:</strong> @Model.GiaBan.ToString("C")</p>
+    @if (!string.IsNullOrEmpty(Model.AnhMoTa))
+    {
+        <img src="@Model.AnhMoTa" alt="Ảnh mô tả" style="max-width: 300px;" />
+    }
+    else
+    {
+        <p>Không có ảnh mô tả</p>
+    }
+</div>
