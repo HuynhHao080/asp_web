@@ -90,6 +90,25 @@ namespace BaiTap07.Controllers
 
             return RedirectToAction("Index");
         }
+        public IActionResult Details(int? id, DateTime? dateBefore)
+        {
+            var query = _db.TheLoai.AsQueryable();
+
+            if (id.HasValue)
+            {
+                query = query.Where(tl => tl.Id > id.Value);
+            }
+
+            if (dateBefore.HasValue)
+            {
+                query = query.Where(tl => tl.DateCreated < dateBefore.Value);
+            }
+
+            var result = query.ToList();
+
+            return View(result);
+        }
+
 
     }
 }
