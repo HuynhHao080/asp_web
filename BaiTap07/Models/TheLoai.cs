@@ -6,8 +6,15 @@ namespace BaiTap07.Models
 	{
 		[Key]
 		public int Id { get; set; }
-		[Required]
+
+		[Required(ErrorMessage = "Không được để trống tên thể loại")]
+		[StringLength(10, ErrorMessage = "Tên thể loại không được quá 10 ký tự")]
+		[Display(Name = "Tên Thể Loại")]
 		public string Name { get; set; }
-		public DateTime DateCreated { get; set; } = DateTime.Now;
+
+		[Required(ErrorMessage = "Không được để trống ngày tạo")]
+		[Display(Name = "Ngày Tạo")]
+		public DateTime? DateCreated { get; set; } = DateTime.Now;
 	}
+
 }
