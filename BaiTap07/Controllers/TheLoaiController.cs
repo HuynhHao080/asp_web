@@ -90,25 +90,50 @@ namespace BaiTap07.Controllers
 
             return RedirectToAction("Index");
         }
-        public IActionResult Details(int? id, DateTime? dateBefore)
+        [HttpGet]
+        public IActionResult Details(int id)
         {
-            var query = _db.TheLoai.AsQueryable();
-
-            if (id.HasValue)
+            if(id == 0)
             {
-                query = query.Where(tl => tl.Id > id.Value);
+                return NotFound();
             }
+            var theloai = _db.TheLoai.Find(id);
+            return View(theloai);
+        }
+		public IActionResult Details(int? id, DateTime? dateBefore)
+		{
+			var query = _db.TheLoai.AsQueryable();
 
-            if (dateBefore.HasValue)
+			if (id.HasValue)
+			{
+				query = query.Where(tl => tl.Id > id.Value);
+			}
+
+			if (dateBefore.HasValue)
+			{
+				query = query.Where(tl => tl.DateCreated < dateBefore.Value);
+			}
+
+			var result = query.ToList();
+
+			return View(result);
+		}
+        [HttpGet]
+        public IActionResult Search(string searchString)
+        {
+            if (!string.IsNullOrEmpty(searchString))
             {
-                query = query.Where(tl => tl.DateCreated < dateBefore.Value);
-            }
-
-            var result = query.ToList();
-
-            return View(result);
+                var theloai = _db.TheLoai.Where(tl => tl.Name.Contains(searchString)).ToList();
+				ViewBag.TheLoai = theloai;
+                ViewBag.SearchString = searchString;
+			}
+            else
+            {
+                var theloai = _db.TheLoai.ToList();
+				ViewBag.TheLoai = theloai;
+			}
+            return View("Index");
         }
 
-
-    }
+	}
 }
