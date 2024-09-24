@@ -1,0 +1,62 @@
+﻿@model IEnumerable<BaiKiemTra02.Models.LopHoc>
+@{
+    if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+}
+
+
+@{
+    ViewData["Title"] = "Danh sách Lớp Học";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                <b>Tên Lớp Học</b>
+            </th>
+            <th>
+                <b>Năm Nhâp Học</b>
+            </th>
+            <th>
+                <b>Năm Ra Học</b>
+            </th>
+            <th>
+                <b>Số Lượng Sinh Viên Theo Học</b>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenLopHoc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NamNhapHoc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NamRaTruong)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoLuongSinhVien)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Sửa</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Chi tiết</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Thêm mới Lớp Học</a>

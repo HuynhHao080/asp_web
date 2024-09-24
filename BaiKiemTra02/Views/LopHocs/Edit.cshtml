@@ -1,0 +1,44 @@
+﻿@model BaiKiemTra02.Models.LopHoc
+
+@{
+    ViewData["Title"] = "Chỉnh Sửa Lớp Học";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Edit" method="post">
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label asp-for="TenLopHoc"></label>
+        <input asp-for="TenLopHoc" class="form-control" />
+        <span asp-validation-for="TenLopHoc" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NamNhapHoc"></label>
+        <input asp-for="NamNhapHoc" class="form-control" />
+        <span asp-validation-for="NamNhapHoc" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NamRaTruong"></label>
+        <input asp-for="NamRaTruong" class="form-control" />
+        <span asp-validation-for="NamRaTruong" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SoLuongSinhVien"></label>
+        <input asp-for="SoLuongSinhVien" class="form-control" />
+        <span asp-validation-for="SoLuongSinhVien" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Lưu</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
