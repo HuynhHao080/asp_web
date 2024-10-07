@@ -1,0 +1,55 @@
+﻿@model IEnumerable<BaiKiemTra03_02.Models.TacGia>
+
+@{
+    ViewData["Title"] = "Danh Sách Tác Giả";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<div class="mb-3">
+    <a asp-action="Create" class="btn btn-primary">Thêm Tác Giả Mới</a>
+</div>
+
+<table class="table table-striped table-bordered">
+    <thead class="table-light">
+        <tr>
+            <th>Mã Tác Giả</th>
+            <th>Tên Tác Giả</th>
+            <th>Quốc Tịch</th>
+            <th>Năm Sinh</th>
+            <th>Thao Tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var author in Model)
+            {
+                <tr>
+                    <td>@author.TacGiaId</td>
+                    <td>@author.TenTacGia</td>
+                    <td>@author.QuocTich</td>
+                    <td>@author.NamSinh</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@author.TacGiaId" class="btn btn-info btn-sm">Xem Chi Tiết</a>
+                        <a asp-action="Edit" asp-route-id="@author.TacGiaId" class="btn btn-warning btn-sm">Sửa</a>
+                        <a asp-action="Delete" asp-route-id="@author.TacGiaId" class="btn btn-sm btn-danger">Xóa</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" class="text-center">Không có tác giả nào được tìm thấy.</td>
+            </tr>
+        }
+    </tbody>
+</table>

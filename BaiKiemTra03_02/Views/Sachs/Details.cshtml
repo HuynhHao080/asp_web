@@ -1,0 +1,29 @@
+﻿@model BaiKiemTra03_02.Models.Sach
+
+@{
+    ViewData["Title"] = "Chi Tiết Sách";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>Sách: @Model.TieuDe</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Mã Sách</dt>
+        <dd class="col-sm-9">@Model.SachId</dd>
+
+        <dt class="col-sm-3">Tác Giả</dt>
+        <dd class="col-sm-9">@Model.TacGia.TenTacGia</dd>
+
+        <dt class="col-sm-3">Năm Xuất Bản</dt>
+        <dd class="col-sm-9">@Model.NamXuatBan</dd>
+
+        <dt class="col-sm-3">Thể Loại</dt>
+        <dd class="col-sm-9">@Model.TheLoai</dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Quay Lại Danh Sách</a>
+</div>

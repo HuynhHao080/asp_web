@@ -1,0 +1,26 @@
+﻿@model BaiKiemTra03_02.Models.TacGia
+
+@{
+    ViewData["Title"] = "Chi Tiết Tác Giả";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="mb-3">
+    <h4>Tác Giả: @Model.TenTacGia</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Mã Tác Giả</dt>
+        <dd class="col-sm-9">@Model.TacGiaId</dd>
+
+        <dt class="col-sm-3">Quốc Tịch</dt>
+        <dd class="col-sm-9">@Model.QuocTich</dd>
+
+        <dt class="col-sm-3">Năm Sinh</dt>
+        <dd class="col-sm-9">@Model.NamSinh</dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Quay Lại Danh Sách</a>
+</div>

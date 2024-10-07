@@ -1,0 +1,44 @@
+﻿@model BaiKiemTra03_02.Models.Sach
+
+@{
+    ViewData["Title"] = "Xóa Sách";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="container">
+    <h3>Bạn có chắc chắn muốn xóa sách: <strong>@Model.TieuDe</strong>?</h3>
+    <form method="post" asp-action="Delete" id="deleteForm">
+        <input asp-for="SachId" type="hidden" />
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <dt class="col-sm-2">Tiêu Đề</dt>
+            <dd class="col-sm-10">@Model.TieuDe</dd>
+        </div>
+        <div class="form-group">
+            <dt class="col-sm-2">Tác Giả</dt>
+            <dd class="col-sm-10">@Model.TacGia.TenTacGia</dd>
+        </div>
+        <div class="form-group">
+            <dt class="col-sm-2">Năm Xuất Bản</dt>
+            <dd class="col-sm-10">@Model.NamXuatBan</dd>
+        </div>
+        <div class="form-group">
+            <dt class="col-sm-2">Thể Loại</dt>
+            <dd class="col-sm-10">@Model.TheLoai</dd>
+        </div>
+
+        <button type="submit" class="btn btn-danger" onclick="return confirmDelete();">Xóa</button>
+        <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+    </form>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script>
+        function confirmDelete() {
+            return confirm('Bạn có chắc chắn muốn xóa sách này không?');
+        }
+    </script>
+}
